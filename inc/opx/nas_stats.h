@@ -43,6 +43,8 @@ t_std_error nas_stats_vxlan_init(cps_api_operation_handle_t handle);
 
 t_std_error nas_stats_tunnel_init(cps_api_operation_handle_t handle);
 
+t_std_error nas_stats_virt_network_init(cps_api_operation_handle_t handle);
+
 t_std_error nas_stats_vlan_sub_intf_init(cps_api_operation_handle_t handle);
 
 bool nas_stat_get_ifindex_from_obj(cps_api_object_t obj,hal_ifindex_t *index,bool clear);

@@ -139,3 +139,7 @@ cps_api_return_code_t nas_fill_all_bridge_info(cps_api_object_list_t *list, mode
     });
     return cps_api_ret_code_OK;
 }
+
+bridge_map_t& nas_bridge_map_get() {
+   return bridge_map;
+}
