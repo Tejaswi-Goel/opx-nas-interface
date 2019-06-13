@@ -47,6 +47,8 @@ cps_api_return_code_t nas_bridge_cps_publish_1q_object(NAS_DOT1Q_BRIDGE *p_bridg
 cps_api_return_code_t nas_bridge_cps_publish_1d_object(NAS_DOT1D_BRIDGE *p_bridge_node, cps_api_operation_types_t op);
 t_std_error nas_bridge_cps_obj_init(cps_api_operation_handle_t handle);
 
+t_std_error nas_vxlan_bridge_cps_init(cps_api_operation_handle_t handle);
+
 #ifdef __cplusplus
 }
 #endif

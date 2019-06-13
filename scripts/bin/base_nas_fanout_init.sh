@@ -1,6 +1,5 @@
-#!/bin/bash -e
-#
-# Copyright (c) 2018 Dell Inc.
+#!/bin/bash
+# Copyright (c) 2015 Dell Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -13,26 +12,10 @@
 #
 # See the Apache Version 2.0 License for specific language governing
 # permissions and limitations under the License.
-#
 
-apt-get update
+. /etc/opx/opx-environment.sh
 
-apt-get install -y python-pytest
-
-/usr/bin/python -m pytest -s
-
-./nas_int_vxlan_unittest
-./nas_int_rpc_unittest
-./nas_int_lag_unittest
-
-if [ $(dpkg-query -W -f='${Status}' python-pytest 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-echo "Install pytest"
-apt-get update
-apt-get install -y python-pytest
+if [ -f /etc/opx/nas_if_nocreate ] ; then
+   exit 0
 fi
-
-pytest -s ./nas_hybrid_group_test.py
-pytest -s ./nas_port_pkt_drop_test.py
-pytest -s ./test_nas_get_ether_stats.py
-pytest -s ./test_nas_get_interface.py
+/usr/bin/base_nas_fanout_init.py

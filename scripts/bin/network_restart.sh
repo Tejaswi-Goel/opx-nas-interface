@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (c) 2018 Dell Inc.
 #
@@ -14,7 +14,6 @@
 # See the Apache Version 2.0 License for specific language governing
 # permissions and limitations under the License.
 #
-
 
 # Bring down all interfaces (except system loopback) before restarting Networking service
 # to ensure that all interface settings gets programmed into the NPU
